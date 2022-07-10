@@ -7,6 +7,8 @@ import 'package:flutter/material.dart';
 /// Widgets:
 
 /// Services:
+import 'package:dio/dio.dart';
+import 'package:flutter_form_builder/flutter_form_builder.dart';
 
 /// State:
 
@@ -22,6 +24,21 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  Future<void> getHttp() async {
+    try {
+      var response = await Dio().get('https://fakestoreapi.com/products');
+      print(response);
+    } catch (e) {
+      print(e);
+    }
+  }
+
+  @override
+  void didChangeDependencies() async {
+    await getHttp();
+    super.didChangeDependencies();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

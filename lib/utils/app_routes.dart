@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 /// Screens:
 import '../screens/home/home_screen.dart';
+import 'package:apnimandi_client/screens/login/login_screen.dart';
 
 /// Widgets:
 
@@ -16,12 +17,19 @@ import 'package:go_router/go_router.dart';
 
 /// Entry Point:
 final GoRouter goRouter = GoRouter(
-  initialLocation: '/',
+  initialLocation: '/login',
   routes: <GoRoute>[
     GoRoute(
       name: 'home',
       path: '/',
-      builder: (BuildContext context, GoRouterState state) => const HomeScreen(),
+      builder: (BuildContext context, GoRouterState state) =>
+          const HomeScreen(),
+    ),
+    GoRoute(
+      name: 'login',
+      path: '/login',
+      builder: (BuildContext context, GoRouterState state) =>
+          const LoginScreen(),
     ),
   ],
   // errorBuilder: (context, state) => ErrorScreen(state.error),
