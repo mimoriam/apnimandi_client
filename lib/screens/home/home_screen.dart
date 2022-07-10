@@ -8,7 +8,6 @@ import 'package:flutter/material.dart';
 
 /// Services:
 import 'package:dio/dio.dart';
-import 'package:flutter_form_builder/flutter_form_builder.dart';
 
 /// State:
 
@@ -27,9 +26,9 @@ class _HomeScreenState extends State<HomeScreen> {
   Future<void> getHttp() async {
     try {
       var response = await Dio().get('https://fakestoreapi.com/products');
-      print(response);
+      debugPrint(response.toString());
     } catch (e) {
-      print(e);
+      debugPrint(e.toString());
     }
   }
 
@@ -48,9 +47,7 @@ class _HomeScreenState extends State<HomeScreen> {
             return OrientationLayoutBuilder(
               // Force a screen to stay in portrait/landscape. Overrides the OrientationLayoutBuilder
               // mode: OrientationLayoutBuilderMode.portrait,
-              portrait: (context) => Container(
-                child: Text("AAAAAA"),
-              ),
+              portrait: (context) => const Text("AAA"),
               landscape: (context) => Container(),
             );
           },

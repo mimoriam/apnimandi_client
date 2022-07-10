@@ -1,0 +1,1 @@
+const kPrimaryGreenColor = 0xff08B34B;
