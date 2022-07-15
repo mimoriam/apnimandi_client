@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 /// Widgets:
 
 /// Services:
+import 'package:form_builder_validators/form_builder_validators.dart';
 
 /// State:
 import 'package:provider/provider.dart';
@@ -45,6 +46,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp.router(
       supportedLocales: const [
         Locale('en'),
+      ],
+      localizationsDelegates: const [
+        FormBuilderLocalizations.delegate,
       ],
       theme: ThemeData(),
       debugShowCheckedModeBanner: false,
