@@ -1,3 +1,4 @@
+import 'package:apnimandi_client/constants/constants.dart';
 import 'package:flutter/material.dart';
 
 /// Models:
@@ -50,7 +51,9 @@ class MyApp extends StatelessWidget {
       localizationsDelegates: const [
         FormBuilderLocalizations.delegate,
       ],
-      theme: ThemeData(),
+      theme: ThemeData().copyWith(
+        colorScheme: ThemeData().colorScheme.copyWith(primary: const Color(kPrimaryGreenColor)),
+      ),
       debugShowCheckedModeBanner: false,
       routerDelegate: goRouter.routerDelegate,
       routeInformationParser: goRouter.routeInformationParser,

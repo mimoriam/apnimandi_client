@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 /// Screens:
 import '../screens/home/home_screen.dart';
 import 'package:apnimandi_client/screens/login/login_screen.dart';
+import 'package:apnimandi_client/screens/forgot_password/forgot_password_screen.dart';
 
 /// Widgets:
 
@@ -31,6 +32,12 @@ final GoRouter goRouter = GoRouter(
       builder: (BuildContext context, GoRouterState state) =>
           const LoginScreen(),
     ),
+    GoRoute(
+      name: 'forgot_pass',
+      path: '/forgot_pass',
+      builder: (BuildContext context, GoRouterState state) =>
+          const ForgotPasswordScreen(),
+    )
   ],
   // errorBuilder: (context, state) => ErrorScreen(state.error),
 );

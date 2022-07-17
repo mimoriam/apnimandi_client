@@ -12,6 +12,7 @@ import 'package:flutter_signin_button/flutter_signin_button.dart';
 /// Services:
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
+import 'package:go_router/go_router.dart';
 
 /// State:
 
@@ -225,11 +226,16 @@ class _LoginScreenState extends State<LoginScreen> {
                                         ),
                                       ],
                                     ),
-                                    const Padding(
-                                      padding: EdgeInsets.only(right: 8.0),
-                                      child: Text(
-                                        "Forgot Password?",
-                                        style: TextStyle(color: Colors.grey),
+                                    InkWell(
+                                      onTap: () {
+                                        GoRouter.of(context).push('/forgot_pass');
+                                      },
+                                      child: const Padding(
+                                        padding: EdgeInsets.only(right: 8.0),
+                                        child: Text(
+                                          "Forgot Password?",
+                                          style: TextStyle(color: Colors.grey),
+                                        ),
                                       ),
                                     ),
                                   ],
