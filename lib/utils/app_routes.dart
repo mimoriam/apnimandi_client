@@ -22,7 +22,7 @@ final GoRouter goRouter = GoRouter(
   routes: <GoRoute>[
     GoRoute(
       name: 'home',
-      path: '/',
+      path: '/home',
       builder: (BuildContext context, GoRouterState state) =>
           const HomeScreen(),
     ),

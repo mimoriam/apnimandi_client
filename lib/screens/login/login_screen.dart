@@ -228,7 +228,8 @@ class _LoginScreenState extends State<LoginScreen> {
                                     ),
                                     InkWell(
                                       onTap: () {
-                                        GoRouter.of(context).push('/forgot_pass');
+                                        GoRouter.of(context)
+                                            .push('/forgot_pass');
                                       },
                                       child: const Padding(
                                         padding: EdgeInsets.only(right: 8.0),
@@ -254,6 +255,8 @@ class _LoginScreenState extends State<LoginScreen> {
                                                   .validate()) {
                                                 print(_formKey
                                                     .currentState!.value);
+                                                GoRouter.of(context)
+                                                    .go('/home');
                                               } else {
                                                 print("validation failed");
                                               }
